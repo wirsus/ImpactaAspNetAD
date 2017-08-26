@@ -15,6 +15,10 @@ namespace Northwind.Repositorios.SqlServer.Ado.Tests
 
             var categoriasDataTable = categoriaRepositorio.Selecionar();
 
+            Assert.AreNotEqual(categoriasDataTable.Rows.Count, 0);
+
+            Console.WriteLine(categoriasDataTable.Rows[0][1]);
+
             foreach (DataRow registro in categoriasDataTable.Rows)
             {
                 Console.WriteLine($"{registro[0]} - {registro[1]}");

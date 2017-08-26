@@ -3,33 +3,33 @@ using System.Data.SqlClient;
 
 namespace Northwind.Repositorios.SqlServer.Ado
 {
-    public class CategoriaRepositorio : RepositorioDataTableBase
+    public class FornecedorRepositorio : RepositorioDataTableBase
     {
         public DataTable Selecionar()
         {
-            var instrucao = @"SELECT CategoryID, CategoryName FROM Categories;";
+            var instrucao = @"SELECT SupplierID, CompanyName FROM Suppliers;";
 
             return base.Selecionar(instrucao);
 
-            //var categoriaDataTable = new DataTable();
+            //var fornecedorDataTable = new DataTable();
 
             //using (var conexao = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True"))
             //{
             //    conexao.Open();
 
-            //    var instrucao = @"SELECT CategoryID, CategoryName FROM Categories;";
+            //    var instrucao = @"SELECT SupplierID, CompanyName FROM Suppliers;";
 
             //    using (var comando = new SqlCommand(instrucao, conexao))
             //    {
             //        using (var dataAdapter = new SqlDataAdapter(comando))
             //        {
-            //            dataAdapter.Fill(categoriaDataTable);
+            //            dataAdapter.Fill(fornecedorDataTable);
             //        }
             //    }
 
             //    //conexao.Close();
             //}
-            //return categoriaDataTable;
+            //return fornecedorDataTable;
         }
     }
 }
