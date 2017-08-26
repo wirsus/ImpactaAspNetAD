@@ -13,5 +13,15 @@ namespace Northwind.WebForms
         {
 
         }
+
+        protected void criterioPesquisaRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            criterioPesquisaMultiView.ActiveViewIndex = Convert.ToInt32(criterioPesquisaRadioButtonList.SelectedValue);
+
+            if (criterioPesquisaMultiView.ActiveViewIndex == 1 && fornecedorDropDownList.Items.Count == 1)
+            {
+                fornecedorDropDownList.DataSourceID = "fornecedorObjectDataSource";
+            }
+        }
     }
 }
