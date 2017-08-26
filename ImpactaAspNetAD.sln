@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Repositorios.SqlServer.Ado", "Northwind.Repositorios.SqlServer.Ado\Northwind.Repositorios.SqlServer.Ado.csproj", "{48C4E0FE-D334-4ACD-AE22-5CEE77882B59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Repositorios.SqlServer.AdoTests", "Northwind.Repositorios.SqlServer.AdoTests\Northwind.Repositorios.SqlServer.AdoTests.csproj", "{76BCB666-4D71-44C7-9982-2F84287B5901}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48C4E0FE-D334-4ACD-AE22-5CEE77882B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48C4E0FE-D334-4ACD-AE22-5CEE77882B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48C4E0FE-D334-4ACD-AE22-5CEE77882B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48C4E0FE-D334-4ACD-AE22-5CEE77882B59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76BCB666-4D71-44C7-9982-2F84287B5901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76BCB666-4D71-44C7-9982-2F84287B5901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76BCB666-4D71-44C7-9982-2F84287B5901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76BCB666-4D71-44C7-9982-2F84287B5901}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
