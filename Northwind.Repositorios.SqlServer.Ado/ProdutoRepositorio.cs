@@ -10,14 +10,14 @@ namespace Northwind.Repositorios.SqlServer.Ado
 {
     public class ProdutoRepositorio : RepositorioDataTableBase
     {
-        public DataTable SelecionarPorCategoria(int CategoriaID)
+        public DataTable SelecionarPorCategoria(int categoriaID)
         {
             var instrucao = @"SELECT ProductID, ProductName, UnitPrice, UnitsInStock FROM Products WHERE ProductID = @categoriaId";
 
             var parametros = new List<SqlParameter>();
-            parametros.Add()
+            parametros.Add(new SqlParameter("@categoriaId", categoriaID));
 
-            return base.Selecionar(instrucao);
+            return base.Selecionar(instrucao, parametros);
         }
     }
 }
