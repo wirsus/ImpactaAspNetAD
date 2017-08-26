@@ -19,5 +19,15 @@ namespace Northwind.Repositorios.SqlServer.Ado
 
             return base.Selecionar(instrucao, parametros);
         }
+
+        public DataTable SelecionarPorFornecedor(int fornecedorID)
+        {
+            var instrucao = @"SELECT ProductID, ProductName, UnitPrice, UnitsInStock FROM Products WHERE SupplierID = @fornecedorId";
+
+            var parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@fornecedorId", fornecedorID));
+
+            return base.Selecionar(instrucao, parametros);
+        }
     }
 }

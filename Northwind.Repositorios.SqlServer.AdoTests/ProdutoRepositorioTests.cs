@@ -18,5 +18,11 @@ namespace Northwind.Repositorios.SqlServer.Ado.Tests
         {
             Assert.AreEqual(_produtoRepositorio.SelecionarPorCategoria(1).Rows[0]["ProductName"], "Chai");
         }
+
+        [TestMethod()]
+        public void SelecionarPorFornecedorTest()
+        {
+            Assert.AreEqual(_produtoRepositorio.SelecionarPorFornecedor(5).Rows[0]["ProductName"], "Queso Cabrales");
+        }
     }
 }
