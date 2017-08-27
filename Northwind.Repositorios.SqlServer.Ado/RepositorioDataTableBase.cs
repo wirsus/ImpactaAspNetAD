@@ -10,7 +10,7 @@ namespace Northwind.Repositorios.SqlServer.Ado
         {
             var dataTable = new DataTable();
 
-            using (var conexao = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True"))
+            using (var conexao = new SqlConnection(@"Data Source=WIRSUS\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True"))
             {
                 conexao.Open();
 
@@ -26,8 +26,6 @@ namespace Northwind.Repositorios.SqlServer.Ado
                         dataAdapter.Fill(dataTable);
                     }
                 }
-
-                //conexao.Close();
             }
             return dataTable;
         }

@@ -12,7 +12,7 @@ namespace Northwind.Repositorios.SqlServer.Ado
     {
         public DataTable SelecionarPorCategoria(int categoriaID)
         {
-            var instrucao = @"SELECT ProductID, ProductName, UnitPrice, UnitsInStock FROM Products WHERE ProductID = @categoriaId";
+            var instrucao = @"SELECT ProductID, ProductName, UnitPrice, UnitsInStock FROM Products WHERE CategoryID = @categoriaId";
 
             var parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@categoriaId", categoriaID));
