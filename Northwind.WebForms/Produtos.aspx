@@ -16,7 +16,7 @@
 
                 <asp:MultiView ActiveViewIndex="0" ID="criterioPesquisaMultiView" runat="server">
                     <asp:View ID="categoriaView" runat="server">
-                        <asp:DropDownList ID="categoriaDropDownList" CssClass="dropdown" DataTextField="CategoryName" DataValueField="CategoryID" AppendDataBoundItems="true" DataSourceID="categoriaObjectDataSource" runat="server">
+                        <asp:DropDownList ID="categoriaDropDownList"  DataTextField="CategoryName" DataValueField="CategoryID" AppendDataBoundItems="true" DataSourceID="categoriaObjectDataSource" runat="server">
                             <asp:ListItem Text="Selecione uma categoria..." Value="0" />
                         </asp:DropDownList>
                         <asp:ObjectDataSource ID="categoriaObjectDataSource" TypeName="Northwind.Repositorios.SqlServer.Ado.CategoriaRepositorio" SelectMethod="Selecionar" runat="server" />
