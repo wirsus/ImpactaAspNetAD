@@ -18,10 +18,14 @@ namespace Northwind.WebForms
         {
             criterioPesquisaMultiView.ActiveViewIndex = Convert.ToInt32(criterioPesquisaRadioButtonList.SelectedValue);
 
+            produtosGridView.DataSourceID = $"produtoPor{criterioPesquisaRadioButtonList.SelectedItem.Text}ObjectDataSource";
+
             if (criterioPesquisaMultiView.ActiveViewIndex == 1 && fornecedorDropDownList.Items.Count == 1)
             {
                 fornecedorDropDownList.DataSourceID = "fornecedorObjectDataSource";
             }
         }
+
+
     }
 }
