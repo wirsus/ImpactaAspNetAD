@@ -39,5 +39,26 @@ namespace Northwind.Repositorios.SqlServer.Ado.Tests
 
             Assert.AreNotEqual(0, transportadora.ID);
         }
+
+        [TestMethod()]
+        public void AtualizarTest()
+        {
+            var transportadora = new Transportadora();
+            transportadora.ID = 6;
+            transportadora.Nome = "Teste Atualizado";
+            transportadora.Telefone = "(222) 222-2222";
+
+            _repositorio.Atualizar(transportadora);
+
+            Assert.AreEqual(_repositorio.Selecionar(transportadora.ID).Nome, transportadora.Nome);
+        }
+
+        [TestMethod()]
+        public void ExcluirTest()
+        {
+            _repositorio.Excluir(6);
+
+            Assert.IsNull(_repositorio.Selecionar(6));
+        }
     }
 }

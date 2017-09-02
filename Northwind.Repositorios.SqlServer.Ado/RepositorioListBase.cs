@@ -14,7 +14,7 @@ namespace Northwind.Repositorios.SqlServer.Ado
     {
         private string _stringConexao = ConfigurationManager.ConnectionStrings["northwindConnectionString"].ConnectionString;
 
-        public List<T> Selecionar<T>(string nomeProcedure, MapeamentoHandler<T> metodoDeMapeamento, SqlParameter[] parametros )
+        public List<T> ExecuteReader<T>(string nomeProcedure, MapeamentoHandler<T> metodoDeMapeamento, params SqlParameter[] parametros)
         {
 
             var lista = new List<T>();
@@ -43,6 +43,44 @@ namespace Northwind.Repositorios.SqlServer.Ado
             }
 
             return lista;
+        }
+
+
+        public object ExecuteScalar(string nomeProcedure, params SqlParameter[] parametros)
+        {
+            using (var conexao = new SqlConnection(_stringConexao))
+            {
+                conexao.Open();
+                //const string nomeprocedure = "transportadorainserir";
+
+                using (var comando = new SqlCommand(nomeProcedure, conexao))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddRange(parametros);
+
+                    //comando.executenonquery();
+                    return comando.ExecuteScalar();
+
+                }
+            }
+        }
+
+        public void ExecuteNonQuery(string nomeProcedure, params SqlParameter[] parametros)
+        {
+            using (var conexao = new SqlConnection(_stringConexao))
+            {
+                conexao.Open();
+
+                using (var comando = new SqlCommand(nomeProcedure, conexao))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddRange(parametros);
+
+                    comando.ExecuteNonQuery();
+                    
+
+                }
+            }
         }
     }
 }
