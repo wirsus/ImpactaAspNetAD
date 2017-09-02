@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 
 namespace Northwind.Repositorios.SqlServer.Ado
 {
-    public class TransportadoraRepositorio
+    public class TransportadoraRepositorio : RepositorioListBase
     {
         public List<Transportadora> Selecionar()
         {
+            
+            return base.Selecionar<Transportadora>("TransportadoraSelecionar", Mapear, null);
 
+            /*
             var transportadoras = new List<Transportadora>();
 
             using (var conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["northwindConnectionString"].ConnectionString))
@@ -37,6 +40,7 @@ namespace Northwind.Repositorios.SqlServer.Ado
             }
 
             return transportadoras;
+            */
         }
 
         public Transportadora Selecionar(int ID)
@@ -93,7 +97,7 @@ namespace Northwind.Repositorios.SqlServer.Ado
             var parametros = new List<SqlParameter>();
 
             parametros.Add(new SqlParameter("CompanyName", transportadora.Nome));
-            parametros.Add(new SqlParameter("Phone", transportadora.Telefone ));
+            parametros.Add(new SqlParameter("Phone", transportadora.Telefone));
 
 
             return parametros.ToArray();
