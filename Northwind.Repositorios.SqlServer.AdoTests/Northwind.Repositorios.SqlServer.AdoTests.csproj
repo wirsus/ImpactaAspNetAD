@@ -94,14 +94,20 @@
     <Compile Include="FornecedorRepositorioTests.cs" />
     <Compile Include="ProdutoRepositorioTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransportadoraRepositorioTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Northwind.Dominio\Northwind.Dominio.csproj">
+      <Project>{5b5ff709-0537-4f33-a061-8824a874c3ec}</Project>
+      <Name>Northwind.Dominio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Northwind.Repositorios.SqlServer.Ado\Northwind.Repositorios.SqlServer.Ado.csproj">
       <Project>{48C4E0FE-D334-4ACD-AE22-5CEE77882B59}</Project>
       <Name>Northwind.Repositorios.SqlServer.Ado</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>
