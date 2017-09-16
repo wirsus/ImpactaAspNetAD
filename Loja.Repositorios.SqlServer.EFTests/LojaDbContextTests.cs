@@ -131,6 +131,18 @@ namespace Loja.Repositorios.SqlServer.EF.Tests
                 .First(p => p.Nome == "Barbeador");
         }
 
+        [TestMethod]
+        public void QueryableTeste()
+        {
+            var query = _dbContext.Produtos.Where(p => p.Preco > 10);
+            query.OrderBy(p => p.Preco);
+
+            var primeiro = query.First();
+            var ultimo = query.Last();
+            var unico = query.Single();
+            
+        }
+
 
         [ClassCleanup]
         public static void DescartarContexto()
