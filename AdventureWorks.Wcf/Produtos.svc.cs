@@ -5,29 +5,27 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using AdventureWorks.Repositorios.SqlServer.EF;
 
 namespace AdventureWorks.Wcf
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    public class Produtos : IService1
+    public class Produtos : IProdutos
     {
-        public string GetData(int value)
+        public Product Get(int id)
         {
-            return string.Format("You entered: {0}", value);
+            //var produto = new AdventureWorks2012Entities:base("name=AdventureWorks2012Entities");
+            using (var dbContext = new AdventureWorks2012Entities())
+            {
+                return dbContext.Products.Find(id);
+            }
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public List<Product> GetByName(string name)
         {
-            if (composite == null)
+            using (var dbContext = new AdventureWorks2012Entities())
             {
-                throw new ArgumentNullException("composite");
+                return dbContext.Products.Where(c => c.Name.Contains(name)).ToList() ;
             }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
         }
     }
 }
