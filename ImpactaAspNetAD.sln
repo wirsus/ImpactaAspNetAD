@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Repositorios.SqlServer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Mvc", "Loja.Mvc\Loja.Mvc.csproj", "{7CDDE9F7-2CB9-4059-91DD-D796DA26C02C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.Repositorios.SqlServer.EF", "AdventureWorks.Repositorios.SqlServer.EF\AdventureWorks.Repositorios.SqlServer.EF.csproj", "{C3A3B8F7-475C-4BF3-8CCF-940E2123C333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.Wcf", "AdventureWorks.Wcf\AdventureWorks.Wcf.csproj", "{F8E99809-0B70-4237-8B2C-C27F0E62E888}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{7CDDE9F7-2CB9-4059-91DD-D796DA26C02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CDDE9F7-2CB9-4059-91DD-D796DA26C02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CDDE9F7-2CB9-4059-91DD-D796DA26C02C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3A3B8F7-475C-4BF3-8CCF-940E2123C333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A3B8F7-475C-4BF3-8CCF-940E2123C333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A3B8F7-475C-4BF3-8CCF-940E2123C333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A3B8F7-475C-4BF3-8CCF-940E2123C333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8E99809-0B70-4237-8B2C-C27F0E62E888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8E99809-0B70-4237-8B2C-C27F0E62E888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8E99809-0B70-4237-8B2C-C27F0E62E888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8E99809-0B70-4237-8B2C-C27F0E62E888}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
