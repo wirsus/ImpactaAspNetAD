@@ -14,5 +14,7 @@ namespace Loja.Dominio
         public String Nome { get; set; }
         public Decimal Preco { get; set; }
         public Int32 Estoque { get; set; }
+        public bool Descont { get; set; }
+
     }
 }
