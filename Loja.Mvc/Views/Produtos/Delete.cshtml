@@ -1,0 +1,56 @@
+﻿@model Loja.Mvc.Models.ProdutoViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Produto - Apagar</h2>
+
+<h3>Tem certeza que quer apagar?</h3>
+<div>
+    <h4>Produto - @Html.DisplayFor(model => model.Id)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estoque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estoque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoriaNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoriaNome)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Apagar..." class="btn btn-danger" /> |
+            @Html.ActionLink("Voltar para a lista", "Index")
+        </div>
+    }
+</div>
