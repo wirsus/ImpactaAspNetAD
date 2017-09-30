@@ -51,7 +51,7 @@ namespace Loja.Mvc.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Produtos.Add(Mapeamento.Mapear(viewModel, db.Categorias.Find(viewModel.CategoriaId)));
+                db.Produtos.Add(Mapeamento.Mapear(viewModel,  db));
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -85,9 +85,12 @@ namespace Loja.Mvc.Controllers
             {
                 var produto = db.Produtos.Find(viewModel.Id);
 
-                db.Entry(produto).State = EntityState.Modified;
-                db.Entry(produto).CurrentValues.SetValues(viewModel);
-                produto.Categoria = db.Categorias.Find(viewModel.CategoriaId);
+                Mapeamento.Mapear(viewModel, produto, db);
+
+                //db.Entry(produto).State = EntityState.Modified;
+                //db.Entry(produto).CurrentValues.SetValues(viewModel);
+                //produto.Categoria = db.Categorias.Find(viewModel.CategoriaId);
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

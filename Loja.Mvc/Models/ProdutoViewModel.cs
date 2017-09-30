@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Loja.Mvc.Models
@@ -31,5 +32,7 @@ namespace Loja.Mvc.Models
         public Nullable<Int32> CategoriaId { get; set; }
 
         public List<SelectListItem> Categorias { get; set; }
+
+        public HttpPostedFileBase Imagem { get; set; }
     }
 }

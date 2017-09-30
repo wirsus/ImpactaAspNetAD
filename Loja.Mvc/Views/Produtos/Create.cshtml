@@ -7,7 +7,7 @@
 <h2>Criar Produto</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Produtos", FormMethod.Post, new { enctype="multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
 
@@ -44,6 +44,14 @@
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.CategoriaId, Model.Categorias, "Selecione a categoria...", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CategoriaId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Imagem, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Imagem,  new { @class = "form-control", type="file", accept="image/*" })
+                @Html.ValidationMessageFor(model => model.Imagem, "", new { @class = "text-danger" })
             </div>
         </div>
 

@@ -9,40 +9,55 @@
 <div>
     <h4>Produto código - @Html.DisplayFor(model => model.Id)</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Nome)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Preco)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Preco)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Preco)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Preco)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Estoque)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Estoque)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Estoque)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Estoque)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CategoriaNome)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CategoriaNome)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CategoriaNome)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.CategoriaNome)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="~/ImagemProduto/Miniatura?produtoId=@Model.Id&altura=200&largura=200" title="@Model.Nome" class="img-resposive" />
+            </div>
+        </div>
+    </div>
 
-    </dl>
+
 </div>
 <p>
     @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
