@@ -51,8 +51,18 @@
   <ItemGroup>
     <Compile Include="LojaDbContext.cs" />
     <Compile Include="LojaDbInitializer.cs" />
+    <Compile Include="Migrations\201709232045427_InitialCreate.cs" />
+    <Compile Include="Migrations\201709232045427_InitialCreate.Designer.cs">
+      <DependentUpon>201709232045427_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709301346524_ProdutoImagem.cs" />
+    <Compile Include="Migrations\201709301346524_ProdutoImagem.Designer.cs">
+      <DependentUpon>201709301346524_ProdutoImagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\CategoriaConfiguration.cs" />
     <Compile Include="ModelConfiguration\ProdutoConfiguration.cs" />
+    <Compile Include="ModelConfiguration\ProdutoImagemConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +74,14 @@
       <Project>{26F25E2F-C23F-410F-B470-119F9A76750D}</Project>
       <Name>Loja.Dominio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709232045427_InitialCreate.resx">
+      <DependentUpon>201709232045427_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709301346524_ProdutoImagem.resx">
+      <DependentUpon>201709301346524_ProdutoImagem.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

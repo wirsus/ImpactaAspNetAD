@@ -11,10 +11,11 @@ namespace Loja.Dominio
         public Int32 Id { get; set; }
         //virtual - ligar o LAZY LOAD
         public virtual Categoria Categoria { get; set; }
+        public virtual ProdutoImagem Imagem { get; set; }
         public String Nome { get; set; }
         public Decimal Preco { get; set; }
         public Int32 Estoque { get; set; }
-        public bool Descont { get; set; }
+        public bool Ativo { get; set; }
 
     }
 }

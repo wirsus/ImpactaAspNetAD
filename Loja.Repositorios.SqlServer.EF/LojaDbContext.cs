@@ -1,4 +1,5 @@
 ﻿using Loja.Dominio;
+using Loja.Repositorios.SqlServer.EF.Migrations;
 using Loja.Repositorios.SqlServer.EF.ModelConfiguration;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -10,8 +11,9 @@ namespace Loja.Repositorios.SqlServer.EF
         public LojaDbContext():base("name=lojaConnectionString")
         {
             //pg 191 - estratégia de inicialização do banco de dados
-            Database.SetInitializer(new LojaDbInitializer());
+            //Database.SetInitializer(new LojaDbInitializer());
 
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<LojaDbContext, Configuration>());
         }
 
         public DbSet<Produto> Produtos { get; set; }
@@ -22,7 +24,7 @@ namespace Loja.Repositorios.SqlServer.EF
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             modelBuilder.Configurations.Add(new ProdutoConfiguration());
-
+            modelBuilder.Configurations.Add(new ProdutoImagemConfiguration());
             modelBuilder.Configurations.Add(new CategoriaConfiguration());
 
             base.OnModelCreating(modelBuilder);

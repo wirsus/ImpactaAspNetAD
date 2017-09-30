@@ -31,7 +31,7 @@ namespace Loja.Repositorios.SqlServer.EF
             grampeador.Nome = "Grampeador";
             grampeador.Preco = 17.27M;
             grampeador.Estoque = 27;
-            grampeador.Descont = true;
+            grampeador.Ativo = true;
             grampeador.Categoria = context.Categorias.Single(c => c.Nome == "Papelaria");
 
 
@@ -39,14 +39,14 @@ namespace Loja.Repositorios.SqlServer.EF
             penDrive.Nome = "PenDrive";
             penDrive.Preco = 36.21M;
             penDrive.Estoque = 32;
-            penDrive.Descont = true;
+            penDrive.Ativo = true;
             penDrive.Categoria = context.Categorias.Single(c => c.Nome == "Informática");
 
             var perfume = new Produto();
             perfume.Nome = "Perfume";
             perfume.Preco = 89.44M;
             perfume.Estoque = 6;
-            perfume.Descont = true;
+            perfume.Ativo = true;
             perfume.Categoria = context.Categorias.Single(c => c.Nome == "Perfumaria");
 
             //return new List<Produto> { grampeador, penDrive, perfume};
